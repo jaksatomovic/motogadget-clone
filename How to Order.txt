@@ -1,0 +1,28 @@
+1, Go to jlcpcb.com and log in with your Gmail ID.
+
+2, Click on the "Order" tab in the upper right corner.
+
+3, Click "Add Gerber File" and upload the Gerber file. "Gerber_Canarin_MUX_PCB.zip"
+
+4, After the upload is complete, Just select the color of the PCB (Green or any other) from the options below and do not change any other settings.
+
+5, For PCB Assembly, scroll down and turn on "PCB Assembly".
+
+6, Select "Standard PCBA", "Assemble Top Side" and choose quantity of PCBs to be assembled
+
+7, Click "Next"
+
+8, Again Click "Next"
+
+9, Now upload BOM and CPL(Pick n Place) Files here, and click "Proceed" (If you get any error just click Continue)
+
+10, Make sure every part is available and ticked. click "Proceed"
+
+11, Again click "Next".
+
+12, Select Product Description from drop down menu.
+
+5, Click "Add to Cart" and then proceed to checkout.
+
+NOTE1: Since its first prototype we will suggest you to order only 5 PCBs and Assemble only 2 of them.
+NOTE2: JLCPCB might contact you (rare case) if they found something wrong. let me know if they found something wrong.
