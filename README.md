@@ -39,10 +39,28 @@ This project provides an open-source alternative to the **Motogadget M-Unit Blue
 
 ---
 
-## 📄 Schematics
+## 📜 Schematic
 
-Full schematics available in PDF:  
-[📑 Schematic_Canarin_MUX.pdf](./Schematic_Canarin_MUX.pdf)
+**Preview**
+
+![Schematic](scheme.png)
+
+**Full PDF**: [Schematic_Canarin_MUX.pdf](Schematics/Schematic_Canarin_MUX.pdf)
+
+---
+
+## ⚙️ Assembly & Pick and Place
+
+Pick and Place file is available in:  
+[`BOM and Pick N Place/PickAndPlace_PCB_Canarin_MUX.csv`](BOM%20and%20Pick%20N%20Place/PickAndPlace_PCB_Canarin_MUX.csv)
+
+---
+
+## 📂 3D Model
+
+The full 3D STEP file is provided for enclosure and mechanical integration:
+
+[`3D File/3D_File.step`](3D%20File/3D_File.step)
 
 ---
 
