@@ -1,159 +1,144 @@
-# Motogadget Clone
+# Motogadget Clone (ESP32)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Platform: ESP32](https://img.shields.io/badge/Platform-ESP32-blue.svg)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 
-**DIY prototype of a Motogadget-like unit (inspired by Motogadget M-Unit Blue) using ESP32**
+**A fully open-source motorcycle control unit (inspired by Motogadget M-Unit Blue), powered by ESP32.**  
+Complete with PCB schematics, 3D models, BOM + Pick & Place, and firmware examples.
 
 ---
 
-## 📖 Table of Contents
+## 📚 Overview
 
-- [Project Description](#-project-description)  
-- [Repository Structure](#-repository-structure)  
-- [Requirements](#-requirements)  
-- [Getting Started](#-getting-started)  
-- [Status & Roadmap](#-status--roadmap)  
-- [PCB Fabrication Support](#-pcb-fabrication-support)  
-- [Community & Promotion](#-community--promotion)  
-- [How to Contribute](#-how-to-contribute)  
-- [License](#-license)  
+This project develops an open-source alternative to the **Motogadget M-Unit Blue**, intended for **custom motorcycles and DIY builders**.  
 
----
+- Handles **all electrical functions** (lights, horn, ignition enable, indicators).  
+- Adds **overcurrent/short-circuit protection** strategies.  
+- Firmware-driven logic: configurable behavior (auto-cancel indicators, delayed lights, etc.).  
+- **ESP32 MCU** enables advanced features (future: Bluetooth app config, CAN bus).  
 
-## 🛠 Project Description
-
-This project is my DIY prototype of a Motogadget control unit (e.g. *M-Unit Blue*).  
-The goal is to provide a more affordable, open version with essential features:
-
-- Handle inputs from switches/signals  
-- Manage power and protection  
-- Ready-to-build PCB and schematics  
-
-⚠️ The project is **not finished** — currently in **experimental stage** and open for community contributions.
-
-### Purpose
-Custom motorcycle builders often rely on expensive proprietary units.  
-This project aims to:  
-1. Provide an **open-source alternative** at lower cost.  
-2. Document both **hardware and firmware** for reproducibility.  
-3. Enable hobbyists to **modify and adapt** the system freely.  
+> ⚠️ Project is in **prototype/experimental** stage. Hardware and firmware are subject to change.
 
 ---
 
-## 📂 Repository Structure
+## 🛠️ Hardware Details
 
-```text
-├── Schematics/              ← electronic schematics  
-├── PCB/                     ← PCB board files (Gerber, top/bottom view, images)  
-├── BOM and Pick N Place     ← bill of materials + placement files  
-├── EasyEDA Source Files     ← EasyEDA project sources  
-├── How to Order.txt         ← instructions for PCB ordering  
-├── License                  ← project license (MIT)  
-└── … other docs and resources  
-````
+- **MCU**: ESP32  
+- **Power**: fused battery input, protection circuitry, buck regulator  
+- **Inputs**: switch/button signals (momentary or latching)  
+- **Outputs**: relay or solid-state drivers for lighting + auxiliary loads  
+- **Form factor**: compact PCB for mounting under seat/tank  
+- **Design priorities**: vibration resistance, easy wiring, serviceability  
 
----
+📄 **Schematics:**  
+[Schematic PDF](./Schematics/Schematic_Canarin_MUX.pdf)  
 
-## ⚡ Requirements
+📦 **3D Model Previews:**  
+*(add your `.step` or screenshot images here, e.g. from EasyEDA export)*  
 
-* ESP32 microcontroller
-* Components from the BOM
-* Soldering tools / prototyping equipment
-* Software: Arduino IDE or PlatformIO, EasyEDA (for PCB design)
-* Stable power supply (with protection recommended)
+🖼 **PCB Images:**  
+*(insert renders or Gerber previews from `/PCB` folder)*  
 
 ---
 
-## 🚀 Getting Started
+## 📦 Bill of Materials (BOM)
 
-1. Clone the repository:
+A detailed **BOM + Pick & Place** file is provided in:  
+[`/BOM and Pick N Place`](./BOM%20and%20Pick%20N%20Place)  
 
-   ```bash
-   git clone https://github.com/jaksatomovic/motogadget-clone.git
-   ```
-2. Review the schematics and PCB files.
-3. Assemble or order the PCB using the Gerber files.
-4. Solder and connect components according to the BOM.
-5. Upload firmware / test code to the ESP32.
-6. Verify basic functionality (switches, LEDs, power protection).
+Key components include:
 
----
-
-## 📌 Status & Roadmap
-
-**Current status:**
-
-* PCB design drafted, basic schematics available
-* Firmware in early stage
-* Used mainly as **prototype / proof of concept**
-
-**Planned improvements:**
-
-* Develop stable firmware with configuration support
-* Test robustness under real-world motorcycle conditions (vibration, temperature, moisture)
-* Add protective features (short-circuit handling, current limits, fuses)
-* Explore CAN communication and additional modules
-* Document practical wiring examples for different motorcycle setups
-
-**Timeline (approx.):**
-
-* 1–2 months: Hardware testing and first riding tests
-* 3–4 months: Improved firmware and protective features
-* 5–6 months: Publish community-ready version with tutorials
+| Component      | Description                  | Notes                  |
+|----------------|------------------------------|------------------------|
+| MCU            | ESP32-WROOM Module           | Main controller        |
+| Relays/MOSFETs | Automotive-rated drivers     | Output switching       |
+| Regulator      | DC-DC buck                   | Stable 3.3V for MCU    |
+| Connectors     | Screw terminal / JST options | For I/O wiring         |
+| Protection     | Fuse, TVS diode              | Short-circuit safety   |
 
 ---
 
-## 🛠 PCB Fabrication Support
+## 📐 PCB Fabrication
 
-The first PCB prototypes are manufactured with the support of **PCBWay**.
-Their sponsorship of 5–10 PCBs allows faster development and testing without additional costs.
+All Gerber files are included under [`/PCB`](./PCB).  
+Boards are currently being fabricated and tested with the support of **PCBWay**.  
 
-I will be documenting my experience with PCBWay’s:
+**Manufacturing Sponsor:**  
+Huge thanks to **PCBWay** for sponsoring the first prototype batch. Their **high-quality manufacturing, quick turnaround, and helpful service** accelerate development.  
 
-* **PCB quality and durability**
-* **Service and ordering process**
-* **Delivery and packaging**
-
-This feedback will be published here and on Reddit to help other makers.
+> A full review of PCB quality, assembly, and ordering experience will be published here and on Reddit once boards are tested.
 
 ---
 
-## 🌍 Community & Promotion
+## 🚀 Firmware
 
-Project updates are currently shared on:
+- **Platform**: Arduino IDE or PlatformIO  
+- **Core logic**: input scanning, rules engine, output driving  
+- **Planned features**:  
+  - Configurable I/O mapping  
+  - Short-circuit detection/handling  
+  - Bluetooth app configuration  
+  - CAN bus integration  
 
-* [GitHub Repository](https://github.com/jaksatomovic/motogadget-clone)
-* [Reddit ESP32 thread](https://www.reddit.com/r/esp32/comments/1njkbk2/open_source_motogadget_clone_my_side_project_is/)
-
-Future promotion is planned via:
-
-* Reddit motorcycle builder communities
-* YouTube demos (once the hardware is fully assembled)
-
-Everyone is encouraged to contribute or share builds — this is a community project.
+*(Firmware will be pushed as soon as bring-up tests are complete.)*
 
 ---
 
-## 🤝 How to Contribute
+## 🧪 Testing Plan
 
-The community is welcome to participate! You can:
+1. **Bench Power-Up**: check voltage rails, ESP32 boot.  
+2. **Input Simulation**: switch/button signals → serial monitor feedback.  
+3. **Output Loads**: drive LEDs, then lamps, then full motorcycle circuits.  
+4. **Protection**: simulate short-circuit with current-limited supply.  
+5. **Environmental**: vibration/shock (bench test), thermal cycling.  
+6. **On-Bike**: staged integration — start with indicators/horn, then expand.  
 
-* Try out the project and build your own prototype
-* Report bugs or ideas via *Issues*
-* Submit *Pull Requests* for firmware, PCB, or documentation improvements
-* Share photos/videos of your prototype
+---
 
-If you create improvements (e.g. a better PCB version), I’d be glad to merge them into the repo.
+## 📅 Roadmap
+
+- **Now**: PCB prototyping, firmware scaffolding.  
+- **1–2 months**: Hardware bring-up, protective feature testing.  
+- **3–4 months**: Firmware stability, Bluetooth integration.  
+- **5–6 months**: Community-ready release with guides and demos.  
+
+---
+
+## 📸 Media
+
+Add your images here once PCBs arrive:  
+- PCB top/bottom photos  
+- 3D renders  
+- Assembly shots  
+- On-bike installation  
+
+---
+
+## 🙌 Collaboration
+
+Contributions welcome!  
+- Build & test your own prototype.  
+- File issues for bugs, improvements, ideas.  
+- PRs for firmware, PCB design, docs.  
+- Share builds (photos/videos).  
 
 ---
 
 ## 📜 License
 
-This project is released under the **MIT License**.
-See the [`LICENSE`](LICENSE) file for details.
+This project is released under the **MIT License**.  
+All files (schematics, PCB, firmware, docs) are open for personal and commercial use with attribution.
 
 ---
 
-> *“Open source means everyone can help — collective knowledge is stronger.”*
+## 🔗 Resources
+
+- [GitHub Repository](https://github.com/jaksatomovic/motogadget-clone)  
+- [PCBWay](https://www.pcbway.com/)  
+- [ESP32 Documentation](https://docs.espressif.com/)  
+- [Arduino IDE](https://www.arduino.cc/en/software)  
+
+---
+
+> _“Open source means everyone can help — collective knowledge is stronger.”_
