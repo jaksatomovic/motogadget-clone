@@ -8,6 +8,8 @@
 
 Complete with PCB schematics, 3D models, BOM + Pick & Place, and firmware examples.
 
+ORDER HERE -> https://www.pcbway.com/project/shareproject/Motogadget_Clone_0a54cb40.html
+
 ---
 
 ## 📚 Overview
