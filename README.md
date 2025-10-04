@@ -1,3 +1,8 @@
+<a href="https://buymeacoffee.com/iamcanarin" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200"/>
+</a>
+
+
 # Motogadget Clone (ESP32)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
